@@ -1,0 +1,10 @@
+strictDepBuilds: true
+# Dependency installation is explicit; running a script must not reinstall it.
+verifyDepsBeforeRun: false
+optimisticRepeatInstall: false
+allowBuilds:
+  esbuild: true
+  fsevents: true
+  sharp: true
+  unrs-resolver: true
+  workerd: true

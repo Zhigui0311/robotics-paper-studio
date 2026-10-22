@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "title": "",
+  "authors": [],
+  "year": null,
+  "venue": null,
+  "identifiers": {"doi": null, "arxiv": null, "openreview": null},
+  "urls": {"paper": null, "code": null, "project": null},
+  "reading_status": "queued",
+  "evidence_level": "metadata",
+  "summary": "",
+  "tags": {"domain": [], "task": [], "method": [], "embodiment": [], "observation": [], "action": [], "validation": [], "custom": []},
+  "sources": [],
+  "results": [],
+  "relations": [],
+  "attachments": []
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "机器人论文研究工作台"
+  short_description: "机器人、具身智能与运动控制论文精读、相似对比、分类和可迁移知识库"
+  default_prompt: "使用 $robotics-paper-workbench 精读这篇论文，解释技术路线，检索相似工作并分类存入知识库。"

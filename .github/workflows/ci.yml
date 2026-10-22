@@ -1,0 +1,61 @@
+name: Check and release
+
+on:
+  push:
+    branches: ['**']
+    tags: ['v*']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          package-manager-cache: false
+      - run: npm install --global pnpm@11.25.0
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm typecheck
+      - run: pnpm test
+        env:
+          KB_SCRIPT: skills/robotics-paper-workbench/scripts/kb.py
+      - run: pnpm test:skill
+      - run: python3 -m unittest discover -s tests -p 'test_*.py'
+      - run: pnpm check:release
+      - run: pnpm package:skill
+      - name: Confirm the committed Skill download is current
+        run: git diff --exit-code -- public/downloads/robotics-paper-workbench.zip
+      - run: pnpm build
+
+  release:
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: verify
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Validate tag and extract release notes
+        run: python3 scripts/release-notes.py --tag "$GITHUB_REF_NAME" --out .sites-runtime/release-notes.md
+      - name: Create or complete the versioned GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1; then
+            gh release upload "$GITHUB_REF_NAME" public/downloads/robotics-paper-workbench.zip --clobber
+          else
+            gh release create "$GITHUB_REF_NAME" public/downloads/robotics-paper-workbench.zip \
+              --verify-tag --title "Embodied Paper Studio $GITHUB_REF_NAME" \
+              --notes-file .sites-runtime/release-notes.md
+          fi
