@@ -2,6 +2,13 @@
 
 All notable changes are recorded here. Versions follow Semantic Versioning. Dates use Asia/Shanghai.
 
+## [Unreleased]
+
+### Documentation
+
+- Add the hosted website entry and first-use steps for importing, reading, comparing, classifying and backing up papers.
+- Document cloning, local database initialization, the browser address and local test login; clarify deployment requirements and the distinction between Skill and library backups.
+
 ## [0.2.0] - 2026-10-22
 
 ### Added
