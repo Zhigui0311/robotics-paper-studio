@@ -4,6 +4,8 @@
 
 公开仓库：https://github.com/Zhigui0311/robotics-paper-studio，默认分支为 `main`。本机 Git 没有认证时，可通过已连接的 GitHub 工具写入，并把 GitHub 上的新历史拉回本地；不能强推覆盖远程历史。
 
+网站工程位于仓库根目录；各功能对应的文件及后续部署流程见[网站维护指南](maintenance.md)。
+
 ## 日常修改
 
 1. 拉取并核对已有修改，不覆盖其他贡献者的提交。

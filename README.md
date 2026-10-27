@@ -4,6 +4,12 @@
 
 源码同时包含网站和 `skills/robotics-paper-workbench/` 阅读 Skill。当前网站版本为 **0.2.0**，Skill 版本为 **1.1.0**。
 
+## 网站源码在哪里
+
+网站工程直接放在本仓库根目录，对应开发电脑上的 `sites/robotics-paper-studio/`。仓库包含页面、服务端、数据库迁移、PDF 解析、阅读 Skill、测试及构建脚本，克隆后即可继续开发。
+
+后续完善网站时，请先看[网站维护指南](docs/maintenance.md)：其中列出了各项功能对应的源文件，以及修改、检查、同步 GitHub 和更新线上网站的流程。
+
 ## 如何打开网页
 
 **已有托管入口：[打开具身论文工作台](https://robotics-paper-studio-edy.divinetiger19.chatgpt.site/)。** 在浏览器打开后，若看到「登录」按钮，先按页面提示登录。访问范围以该站点当前的权限设置为准；遇到无权限提示时，可以[本地运行](#本地打开网页)，或按[部署说明](docs/deployment.md)创建自己的站点。
@@ -32,7 +38,7 @@
 ## 开源与版本
 
 - [MIT 许可](LICENSE)、[第三方许可](THIRD_PARTY_NOTICES.md)、[更新记录](CHANGELOG.md)。
-- [贡献指南](CONTRIBUTING.md)、[部署说明](docs/deployment.md)、[GitHub 版本流程](docs/versioning.md)。
+- [网站维护指南](docs/maintenance.md)、[贡献指南](CONTRIBUTING.md)、[部署说明](docs/deployment.md)、[GitHub 版本流程](docs/versioning.md)。
 - 每次推送和 Pull Request 运行类型检查、网站/Skill 测试与构建；正式 `vX.Y.Z` 标签通过检查后生成 GitHub Release。
 - 源码不包含用户论文、笔记、数据库或原作者托管项目身份。论文库通过网站单独备份。
 

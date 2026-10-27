@@ -8,6 +8,7 @@ All notable changes are recorded here. Versions follow Semantic Versioning. Date
 
 - Add the hosted website entry and first-use steps for importing, reading, comparing, classifying and backing up papers.
 - Document cloning, local database initialization, the browser address and local test login; clarify deployment requirements and the distinction between Skill and library backups.
+- Add a website maintenance guide mapping features to source files, with GitHub synchronization, existing-site deployment and separate research-data backup instructions.
 
 ## [0.2.0] - 2026-10-22
 
