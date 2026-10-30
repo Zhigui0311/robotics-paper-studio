@@ -4,6 +4,12 @@ All notable changes are recorded here. Versions follow Semantic Versioning. Date
 
 ## [Unreleased]
 
+### Changed
+
+- Format core website, API, MCP, data-contract and export modules into readable source without changing their logic.
+- Extract website reading and comparison handoff prompts into `lib/skill-prompts.ts` without changing their text.
+- Document the website, MCP tools, Skill source and local-library mapping.
+
 ### Documentation
 
 - Add the hosted website entry and first-use steps for importing, reading, comparing, classifying and backing up papers.

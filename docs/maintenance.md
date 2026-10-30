@@ -2,6 +2,8 @@
 
 本仓库包含完整的网站工程和论文阅读 Skill。网站工程直接放在仓库根目录，对应开发电脑上的 `sites/robotics-paper-studio/`；克隆仓库后即可继续修改，无需额外获取一个 `sites` 文件夹。
 
+网站与 Skill 的逐项关系见 [功能与 Skill 对照表](skill-map.md)。精读及对比指令统一放在 `lib/skill-prompts.ts`，页面只传入当前网站地址和论文信息。
+
 ## 从哪里开始
 
 ```sh
@@ -25,6 +27,10 @@ cd robotics-paper-studio
 | 精读规则、技术路线拆解、分类与论文比较 | [skills/robotics-paper-workbench/](../skills/robotics-paper-workbench/) |
 | 网站启动、构建和公开源码导出 | [scripts/](../scripts/)、[package.json](../package.json)、[vite.config.ts](../vite.config.ts) |
 | 自动检查与正式版本发布 | [.github/workflows/ci.yml](../.github/workflows/ci.yml)、[docs/versioning.md](versioning.md) |
+
+## 核心代码格式
+
+页面、API、MCP 和核心数据模块使用 Prettier 3.6.2 展开排版。后续编辑请保持可读的多行源码，避免把整块 JSX 或函数压成单行。
 
 ## 每次修改后如何保存
 
